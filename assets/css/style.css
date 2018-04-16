@@ -1,0 +1,12 @@
+body {
+    background-image: url("../images/theofficetrivia.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-color: linen;
+}
+#triviaquestions {
+    text-align: center;
+    padding-top: 500px;
+    font-family: 'Nixie One', cursive;
+    font-weight: bold;
+}
