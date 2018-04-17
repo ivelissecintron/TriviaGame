@@ -1,3 +1,11 @@
+// variable for timer to start at 60
+var count = 60;
+
+//count of right, wrong, and unanswered questions
+var correctCount = 0;
+var incorrectCount= 0;
+var unansweredCount = 0;
+
 // start button timer starts the game and the timer ticking down
 // when the timer is done alert all done and documents correct & incorrect & unanswered
 // done button calculates the number of correct and incorrect answers
@@ -8,25 +16,3 @@
 //* Don't forget to include a countdown timer.
 //* Get music to play at the end of the game
 
-document.getElementById('timer').innerHTML =
-  03 + ":" + 00;
-startTimer();
-
-function startTimer() {
-  var presentTime = document.getElementById('timer').innerHTML;
-  var timeArray = presentTime.split(/[:]+/);
-  var m = timeArray[0];
-  var s = checkSecond((timeArray[1] - 1));
-  if(s==59){m=m-1}
-  //if(m<0){alert('timer completed')}
-  
-  document.getElementById('timer').innerHTML =
-    m + ":" + s;
-  setTimeout(startTimer, 1000);
-}
-
-function checkSecond(sec) {
-  if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
-  if (sec < 0) {sec = "59"};
-  return sec;
-}
