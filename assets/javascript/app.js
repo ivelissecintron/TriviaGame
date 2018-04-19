@@ -7,6 +7,8 @@ var incorrectCount= 0;
 var unansweredCount = 0;
 var audio = new Audio("assets/music/theoffice.mp3");
 
+$(document).ready(function(){
+
 // hide containers 
 $("#triviaquestionscontainer").hide();
 $("#countercontainer").hide();
@@ -24,7 +26,7 @@ function countdown(){
     count--;
     $("#secondtimer").html(count + " Seconds");
 
-    $("#done").on("click", function(){
+        $("#done").on("click", function(){
         count = 0;
         return
     });
@@ -36,115 +38,115 @@ function countdown(){
 
 
 }
-//
+// starts the timer countdown
 function startCountdown(){
     setInterval(countdown, 1000);
 }
 
-// f
+// 
 function timeUp(){
 
     // variable checks for value from radio button
-    var question1 = $('input:radio[name="question1"]:checked').val();
-    var question2 = $('input:radio[name="question2"]:checked').val();
-    var question3 = $('input:radio[name="question3"]:checked').val();
-    var question4 = $('input:radio[name="question4"]:checked').val();
-    var question5 = $('input:radio[name="question5"]:checked').val();
-    var question6 = $('input:radio[name="question6"]:checked').val();
-    var question7 = $('input:radio[name="question7"]:checked').val();
-    var question8 = $('input:radio[name="question8"]:checked').val();
+    var q1 = $('input:radio[name="question1"]:checked').val();
+    var q2 = $('input:radio[name="question2"]:checked').val();
+    var q3 = $('input:radio[name="question3"]:checked').val();
+    var q4 = $('input:radio[name="question4"]:checked').val();
+    var q5 = $('input:radio[name="question5"]:checked').val();
+    var q6 = $('input:radio[name="question6"]:checked').val();
+    var q7 = $('input:radio[name="question7"]:checked').val();
+    var q8 = $('input:radio[name="question8"]:checked').val();
 
-    if (question1 == undefined){
+    if (q1 == undefined){
         unansweredCount++;
         }
-    else if (question1 == "D. Stapler"){
+    else if (q1 == "D. Stapler"){
         correctCount++;
     }
     else {
         incorrectCount++;
     }
 
-    if (question2 == undefined){
+    if (q2 == undefined){
         unansweredCount++;
     }
-    else if (question2 == "A. Forever by Chris Brown"){
+    else if (q2 == "A. Forever by Chris Brown"){
         correctCount++;
     }
     else {
         incorrectCount++;
     }
 
-    if (question3 == undefined){
+    if (q3 == undefined){
         unansweredCount++;
     }
-    else if (question3 == "B. Bathroom"){
+    else if (q3 == "B. Bathroom"){
         correctCount++;
     }
     else {
         incorrectCount++;
     }
     
-    if (question4 == undefined){
+    if (q4 == undefined){
         unansweredCount++;
     }
-    else if (question4 == "A. Meredith"){
+    else if (q4 == "A. Meredith"){
         correctCount++;
     }
     else {
         incorrectCount++;
     }
 
-    if (question5 == undefined){
+    if (q5 == undefined){
         unansweredCount++;
     }
-    else if (question5 == "C. He's trying to find the end of a wire Jim attached to his computer."){
+    else if (q5 == "C. He's trying to find the end of a wire Jim attached to his computer."){
         correctCount++;
     }
     else {
         incorrectCount++;
     }
     
-    if (question6 == undefined){
+    if (q6 == undefined){
         unansweredCount++;
     }
-    else if (question6 == "B. George Forman Grill"){
+    else if (q6 == "B. George Forman Grill"){
         correctCount++;
     }
     else {
         incorrectCount++;
     }
 
-    if (question7 == undefined){
+    if (q7 == undefined){
         unansweredCount++;
     }
-    else if (question7 == "C. Suck On This"){
+    else if (q7 == "C. Suck On This"){
         correctCount++;
     }
     else {
         incorrectCount++;
     }
 
-    if (question8 == undefined){
+    if (q8 == undefined){
         unansweredCount++;
     }
-    else if (question8 == "C. That's what she said"){
+    else if (q8 == "C. That's what she said"){
         correctCount++;
     }
     else {
         incorrectCount++;
     }
-}
 
-$("#correctanswers").html(correctCount);
-$("#incorrectanswers").html(incorrectCount);
-$("#unanswered").html(unansweredCount);
+    // displays the totals to the html 
+    $("#correctanswers").html(correctCount);
+    $("#incorrectanswers").html(incorrectCount);
+    $("#unanswered").html(unansweredCount);
 
-$("#countercontainer").show();
+    $("#countercontainer").show();
+    //* function to get theme music to play once the time is up
+    function timeUp() {
 
-//* function to get theme music to play once the time is up
-function timeUp() {
-
-    //  The following line will play the audio file we linked to above
     audio.play();
+    }
 }
 });
+
