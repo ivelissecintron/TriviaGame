@@ -30,7 +30,7 @@ $(document).ready(function(){
             return
             });
             //  if timer is up hide the trivia questions container and play theme music
-            if(count == -1){
+            if (count === -1){
                 timeUp();
                 $("#triviaquestionscontainer").hide();
                 audio.play();
@@ -44,7 +44,6 @@ $(document).ready(function(){
     function startCountdown(){
         setInterval(countdown, 1000);
     }
-  
     
     // this function runs when time is up 
     function timeUp(){
@@ -147,6 +146,9 @@ $(document).ready(function(){
 
         // displays counter container 
         $("#countercontainer").show();
-    
+
+        //alert time is up 
+        alert("Time is up!");
+        $("#timer").hide();
     }
 });
